@@ -1,0 +1,14 @@
+FROM rockylinux:9.1.20230215
+RUN yum update -y
+RUN yum install -y java-1.8.0-openjdk-devel
+RUN yum install nginx -y
+ADD default.conf /etc/nginx/conf.d/default.conf
+ADD spring-site-0.0.1-SNAPSHOT.jar /usr/app/
+ADD starter.sh /usr/app/
+RUN ["chmod", "+x", "/usr/app/starter.sh"]
+WORKDIR /usr/app
+EXPOSE  80 8080
+ENTRYPOINT ["/usr/app/starter.sh"]
+
+
+
