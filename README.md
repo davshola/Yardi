@@ -1,4 +1,4 @@
-# Solution to question 1 and 2
+# Solution to task
 
 This folder contains two files: Site.java and a Docker file.
 
